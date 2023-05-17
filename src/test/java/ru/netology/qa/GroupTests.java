@@ -6,15 +6,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import ru.netology.TextGenerator;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class GroupTests {
 
-    private AndroidDriver driver;
+    public AndroidDriver driver;
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
@@ -34,6 +34,10 @@ public class GroupTests {
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
 
     }
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+    }
 
     @Test
     public void validLoginAndPassword() throws InterruptedException {
@@ -42,17 +46,12 @@ public class GroupTests {
         MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
         el1.isDisplayed();
         el1.click();
-        new Actions(driver).sendKeys("l").perform();
-        new Actions(driver).sendKeys("o").perform();
-        new Actions(driver).sendKeys("g").perform();
-        new Actions(driver).sendKeys("i").perform();
-        new Actions(driver).sendKeys("n").perform();
-        new Actions(driver).sendKeys("2").perform();
+        TextGenerator.typeLogin("login2", driver);
 
         MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
         el2.isDisplayed();
         el2.click();
-        new Actions(driver).sendKeys("password2").perform();
+        TextGenerator.typePassword("password2", driver);
         driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
@@ -66,8 +65,61 @@ public class GroupTests {
         Assertions.assertTrue(actual);
     }
 
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
+    @Test
+    public void validLoginAndPasswordWithoutConnection() throws InterruptedException {
+        Thread.sleep(5000);
+
+        driver.toggleAirplaneMode();
+        MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
+        el1.isDisplayed();
+        el1.click();
+        TextGenerator.typeLogin("login2", driver);
+
+        MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
+        el2.isDisplayed();
+        el2.click();
+        TextGenerator.typePassword("password2", driver);
+        driver.hideKeyboard();
+
+        MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
+        el3.isDisplayed();
+        el3.click();
+
+        driver.toggleAirplaneMode();
+
+        Thread.sleep(2000);
+        MobileElement el4 = (MobileElement) driver.findElementByClassName("android.widget.Toast");
+
+        boolean actual = el4.isDisplayed();
+        Assertions.assertTrue(actual);
     }
+
+    @Test
+    public void invalidLoginAndValidPassword() throws InterruptedException {
+        Thread.sleep(5000);
+
+        MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
+        el1.isDisplayed();
+        el1.click();
+        TextGenerator.typeLogin("login", driver);
+
+        MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
+        el2.isDisplayed();
+        el2.click();
+        TextGenerator.typePassword("password2", driver);
+        driver.hideKeyboard();
+
+        MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
+        el3.isDisplayed();
+        el3.click();
+
+        Thread.sleep(2000);
+        MobileElement el4 = (MobileElement) driver.findElementByClassName("android.widget.Toast");
+
+        boolean actual = el4.isDisplayed();
+        Assertions.assertTrue(actual);
+    }
+
+
+
 }
