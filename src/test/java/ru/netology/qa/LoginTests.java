@@ -12,7 +12,7 @@ import ru.netology.TextGenerator;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class GroupTests {
+public class LoginTests {
 
     public AndroidDriver driver;
 
@@ -34,6 +34,7 @@ public class GroupTests {
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
 
     }
+
     @AfterEach
     public void tearDown() {
         driver.quit();
@@ -88,7 +89,7 @@ public class GroupTests {
         driver.toggleAirplaneMode();
 
         Thread.sleep(2000);
-        MobileElement el4 = (MobileElement) driver.findElementByClassName("android.widget.Toast");
+        MobileElement el4 = (MobileElement) driver.findElementById("enter_button");
 
         boolean actual = el4.isDisplayed();
         Assertions.assertTrue(actual);
@@ -114,12 +115,109 @@ public class GroupTests {
         el3.click();
 
         Thread.sleep(2000);
-        MobileElement el4 = (MobileElement) driver.findElementByClassName("android.widget.Toast");
+        MobileElement el4 = (MobileElement) driver.findElementById("enter_button");
 
         boolean actual = el4.isDisplayed();
         Assertions.assertTrue(actual);
     }
 
+    @Test
+    public void validLoginAndBlankPasswordField() throws InterruptedException {
+        Thread.sleep(5000);
 
+        MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
+        el1.isDisplayed();
+        el1.click();
+        TextGenerator.typeLogin("login2", driver);
+
+        driver.hideKeyboard();
+
+        MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
+        el3.isDisplayed();
+        el3.click();
+
+        Thread.sleep(2000);
+        MobileElement el4 = (MobileElement) driver.findElementById("enter_button");
+
+        boolean actual = el4.isDisplayed();
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    public void LoginAndLogout() throws InterruptedException {
+        Thread.sleep(5000);
+
+        MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
+        el1.isDisplayed();
+        el1.click();
+        TextGenerator.typeLogin("login2", driver);
+
+        MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
+        el2.isDisplayed();
+        el2.click();
+        TextGenerator.typePassword("password2", driver);
+        driver.hideKeyboard();
+
+        MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
+        el3.isDisplayed();
+        el3.click();
+
+        Thread.sleep(5000);
+        MobileElement el4 = (MobileElement) driver.findElementById("trademark_image_view");
+
+        boolean actualLogIn = el4.isDisplayed();
+        Assertions.assertTrue(actualLogIn);
+
+        MobileElement el5 = (MobileElement) driver.findElementById("authorization_image_button");
+        el5.isDisplayed();
+        el5.click();
+
+        Thread.sleep(500);
+        MobileElement el6 = (MobileElement) driver.findElementById("android:id/title");
+        el6.isDisplayed();
+        el6.click();
+
+        Thread.sleep(2000);
+        MobileElement el7 = (MobileElement) driver.findElementById("enter_button");
+
+        boolean actual = el7.isDisplayed();
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    public void LoginAndQuitWithoutLogout() throws InterruptedException {
+        Thread.sleep(5000);
+
+        MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
+        el1.isDisplayed();
+        el1.click();
+        TextGenerator.typeLogin("login2", driver);
+
+        MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
+        el2.isDisplayed();
+        el2.click();
+        TextGenerator.typePassword("password2", driver);
+        driver.hideKeyboard();
+
+        MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
+        el3.isDisplayed();
+        el3.click();
+
+        Thread.sleep(5000);
+        MobileElement el4 = (MobileElement) driver.findElementById("trademark_image_view");
+
+        boolean actualLogIn = el4.isDisplayed();
+        Assertions.assertTrue(actualLogIn);
+
+        driver.closeApp();
+        driver.launchApp();
+
+        Thread.sleep(5000);
+
+        MobileElement el5 = (MobileElement) driver.findElementById("enter_button");
+
+        boolean actual = el5.isDisplayed();
+        Assertions.assertTrue(actual);
+    }
 
 }
