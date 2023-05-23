@@ -5,15 +5,8 @@ import org.openqa.selenium.interactions.Actions;
 
 
 public class TextGenerator {
-    public static void typeLogin(String login, WebDriver driver) {
-        char[] strToArray = login.toCharArray();
-        for (char c : strToArray) {
-            new Actions(driver).sendKeys(String.valueOf(c)).perform();
-        }
-    }
-
-    public static void typePassword(String password, WebDriver driver) {
-        char[] strToArray = password.toCharArray();
+    public static void typeText(String text, WebDriver driver) {
+        char[] strToArray = text.toCharArray();
         for (char c : strToArray) {
             new Actions(driver).sendKeys(String.valueOf(c)).perform();
         }

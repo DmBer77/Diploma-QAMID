@@ -24,6 +24,7 @@ public class LoginTests {
         desiredCapabilities.setCapability("appium:automationName", "UiAutomator2");
         desiredCapabilities.setCapability("appium:appPackage", "ru.iteco.fmhandroid");
         desiredCapabilities.setCapability("appium:appActivity", "ru.iteco.fmhandroid.ui.AppActivity");
+        desiredCapabilities.setCapability("appium:unicodeKeyboard", true);
         desiredCapabilities.setCapability("appium:ensureWebviewsHavePages", true);
         desiredCapabilities.setCapability("appium:nativeWebScreenshot", true);
         desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
@@ -47,13 +48,13 @@ public class LoginTests {
         MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
         el1.isDisplayed();
         el1.click();
-        TextGenerator.typeLogin("login2", driver);
+        TextGenerator.typeText("login2", driver);
 
         MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
         el2.isDisplayed();
         el2.click();
-        TextGenerator.typePassword("password2", driver);
-        driver.hideKeyboard();
+        TextGenerator.typeText("password2", driver);
+//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -74,13 +75,13 @@ public class LoginTests {
         MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
         el1.isDisplayed();
         el1.click();
-        TextGenerator.typeLogin("login2", driver);
+        TextGenerator.typeText("login2", driver);
 
         MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
         el2.isDisplayed();
         el2.click();
-        TextGenerator.typePassword("password2", driver);
-        driver.hideKeyboard();
+        TextGenerator.typeText("password2", driver);
+//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -102,13 +103,13 @@ public class LoginTests {
         MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
         el1.isDisplayed();
         el1.click();
-        TextGenerator.typeLogin("login", driver);
+        TextGenerator.typeText("login", driver);
 
         MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
         el2.isDisplayed();
         el2.click();
-        TextGenerator.typePassword("password2", driver);
-        driver.hideKeyboard();
+        TextGenerator.typeText("password2", driver);
+//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -128,9 +129,9 @@ public class LoginTests {
         MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
         el1.isDisplayed();
         el1.click();
-        TextGenerator.typeLogin("login2", driver);
+        TextGenerator.typeText("login2", driver);
 
-        driver.hideKeyboard();
+//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -150,13 +151,13 @@ public class LoginTests {
         MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
         el1.isDisplayed();
         el1.click();
-        TextGenerator.typeLogin("login2", driver);
+        TextGenerator.typeText("login2", driver);
 
         MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
         el2.isDisplayed();
         el2.click();
-        TextGenerator.typePassword("password2", driver);
-        driver.hideKeyboard();
+        TextGenerator.typeText("password2", driver);
+//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -191,13 +192,13 @@ public class LoginTests {
         MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
         el1.isDisplayed();
         el1.click();
-        TextGenerator.typeLogin("login2", driver);
+        TextGenerator.typeText("login2", driver);
 
         MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
         el2.isDisplayed();
         el2.click();
-        TextGenerator.typePassword("password2", driver);
-        driver.hideKeyboard();
+        TextGenerator.typeText("password2", driver);
+//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
