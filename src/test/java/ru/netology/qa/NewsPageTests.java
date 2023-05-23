@@ -649,6 +649,7 @@ public class NewsPageTests {
         el7.isDisplayed();
         el7.click();
         el7.clear();
+
         TextGenerator.typeText("Test_news_for_deleting", driver);
 
         MobileElement el8 = (MobileElement) driver.findElementById("news_item_publish_date_text_input_edit_text");
@@ -730,6 +731,164 @@ public class NewsPageTests {
         Assertions.assertNotEquals(actual2, actual3);
     }
 
-//    _______________________________
+    @Test
+    public void sortAndFilterNews() throws InterruptedException {
+        Thread.sleep(2000);
 
+        MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
+        el2.isDisplayed();
+        el2.click();
+        Thread.sleep(500);
+
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        el3.isDisplayed();
+        el3.click();
+
+        MobileElement el4 = (MobileElement) driver.findElementById("edit_news_material_button");
+        el4.isDisplayed();
+        el4.click();
+
+        MobileElement el5 = (MobileElement) driver.findElementById("add_news_image_view");
+        el5.isDisplayed();
+        el5.click();
+
+        MobileElement el6 = (MobileElement) driver.findElementById("news_item_category_text_auto_complete_text_view");
+        el6.isDisplayed();
+        el6.click();
+        Thread.sleep(500);
+
+        AuxiliaryActions.tapByCoordinates(380, 1090, driver);
+
+        MobileElement el7 = (MobileElement) driver.findElementById("news_item_title_text_input_edit_text");
+        el7.isDisplayed();
+        el7.click();
+        el7.clear();
+        String text = "Test_news_for_sorting_and_filtering_" + AuxiliaryActions.getCurrentTime();
+        TextGenerator.typeText(text, driver);
+
+        MobileElement el8 = (MobileElement) driver.findElementById("news_item_publish_date_text_input_edit_text");
+        el8.isDisplayed();
+        el8.click();
+        Thread.sleep(1000);
+        MobileElement el9 = (MobileElement) driver.findElementById("android:id/button1");
+        el9.isDisplayed();
+        el9.click();
+        MobileElement el10 = (MobileElement) driver.findElementById("news_item_publish_time_text_input_edit_text");
+        el10.isDisplayed();
+        el10.click();
+        Thread.sleep(1000);
+        MobileElement el11 = (MobileElement) driver.findElementById("android:id/button1");
+        el11.isDisplayed();
+        el11.click();
+
+        MobileElement el12 = (MobileElement) driver.findElementById("news_item_description_text_input_edit_text");
+        el12.isDisplayed();
+        el12.click();
+        TextGenerator.typeText("Lorem ipsum dolor sit amet", driver);
+        Thread.sleep(500);
+
+        MobileElement el13 = (MobileElement) driver.findElementById("save_button");
+        el13.isDisplayed();
+        el13.click();
+        Thread.sleep(2000);
+
+        MobileElement el14 = (MobileElement) driver.findElementById("main_menu_image_button");
+        el14.isDisplayed();
+        el14.click();
+        Thread.sleep(500);
+
+        MobileElement el15 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        el15.isDisplayed();
+        el15.click();
+
+        MobileElement el16 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
+        el16.isDisplayed();
+        el16.click();
+        MobileElement el17 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
+        el17.isDisplayed();
+        String actual2 = el17.getText();
+
+        Thread.sleep(1000);
+
+        MobileElement el20 = (MobileElement) driver.findElementById("filter_news_material_button");
+        el20.isDisplayed();
+        el20.click();
+
+        Thread.sleep(1000);
+
+        MobileElement el21 = (MobileElement) driver.findElementById("news_item_category_text_auto_complete_text_view");
+        el21.isDisplayed();
+        el21.click();
+
+        AuxiliaryActions.tapByCoordinates(380, 950, driver);
+
+        MobileElement el22 = (MobileElement) driver.findElementById("news_item_publish_date_start_text_input_edit_text");
+        el22.isDisplayed();
+        el22.click();
+        Thread.sleep(1000);
+        MobileElement el23 = (MobileElement) driver.findElementById("android:id/button1");
+        el23.isDisplayed();
+        el23.click();
+        MobileElement el24 = (MobileElement) driver.findElementById("news_item_publish_date_end_text_input_edit_text");
+        el24.isDisplayed();
+        el24.click();
+        Thread.sleep(1000);
+        MobileElement el25 = (MobileElement) driver.findElementById("android:id/button1");
+        el25.isDisplayed();
+        el25.click();
+
+        MobileElement el26 = (MobileElement) driver.findElementById("filter_button");
+        el26.isDisplayed();
+        el26.click();
+
+//        --------filtering----------------
+
+        Thread.sleep(500);
+
+        MobileElement el28 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
+        el28.isDisplayed();
+        el28.click();
+
+        MobileElement el29 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
+        el29.isDisplayed();
+        String actual3 = el29.getText();
+
+        Assertions.assertEquals(actual2, actual3);
+
+//        --------sorting----------------
+
+        MobileElement el30 = (MobileElement) driver.findElementById("sort_news_material_button");
+        el30.isDisplayed();
+        el30.click();
+
+        Thread.sleep(1000);
+        AuxiliaryActions.verticalSwipeByPercentages(30, 90, 50, driver);
+
+        MobileElement el31 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
+        el31.isDisplayed();
+        el31.click();
+        MobileElement el32 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
+        el32.isDisplayed();
+        String actual4 = el32.getText();
+
+        Assertions.assertNotEquals(actual2, actual4);
+
+//        --------deleting----------------
+
+        Thread.sleep(1000);
+
+        MobileElement el36 = (MobileElement) driver.findElementById("edit_news_material_button");
+        el36.isDisplayed();
+        el36.click();
+
+        Thread.sleep(1000);
+        MobileElement el37 = (MobileElement) driver.findElementById("delete_news_item_image_view");
+        el37.isDisplayed();
+        el37.click();
+        Thread.sleep(1000);
+        MobileElement el38 = (MobileElement) driver.findElementById("android:id/button1");
+        el38.isDisplayed();
+        el38.click();
+        Thread.sleep(500);
+    }
 }

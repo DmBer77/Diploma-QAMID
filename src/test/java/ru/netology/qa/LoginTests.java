@@ -54,7 +54,6 @@ public class LoginTests {
         el2.isDisplayed();
         el2.click();
         TextGenerator.typeText("password2", driver);
-//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -81,7 +80,6 @@ public class LoginTests {
         el2.isDisplayed();
         el2.click();
         TextGenerator.typeText("password2", driver);
-//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -109,7 +107,6 @@ public class LoginTests {
         el2.isDisplayed();
         el2.click();
         TextGenerator.typeText("password2", driver);
-//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -130,8 +127,6 @@ public class LoginTests {
         el1.isDisplayed();
         el1.click();
         TextGenerator.typeText("login2", driver);
-
-//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -157,7 +152,6 @@ public class LoginTests {
         el2.isDisplayed();
         el2.click();
         TextGenerator.typeText("password2", driver);
-//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -198,7 +192,6 @@ public class LoginTests {
         el2.isDisplayed();
         el2.click();
         TextGenerator.typeText("password2", driver);
-//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();

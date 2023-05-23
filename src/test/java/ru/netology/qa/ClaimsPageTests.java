@@ -47,7 +47,6 @@ public class ClaimsPageTests {
         el2.isDisplayed();
         el2.click();
         TextGenerator.typeText("password2", driver);
-//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -113,7 +112,6 @@ public class ClaimsPageTests {
         el6.isDisplayed();
         el6.click();
         TextGenerator.typeText("Petrov Petr Petrovich", driver);
-//        driver.hideKeyboard();
 
         MobileElement el7 = (MobileElement) driver.findElementById("date_in_plan_text_input_edit_text");
         el7.isDisplayed();
@@ -135,7 +133,6 @@ public class ClaimsPageTests {
         el11.isDisplayed();
         el11.click();
         TextGenerator.typeText("claim description", driver);
-//        driver.hideKeyboard();
 
         MobileElement el12 = (MobileElement) driver.findElementById("save_button");
         el12.isDisplayed();
@@ -190,7 +187,6 @@ public class ClaimsPageTests {
         el11.isDisplayed();
         el11.click();
         TextGenerator.typeText("claim description", driver);
-//        driver.hideKeyboard();
 
         MobileElement el12 = (MobileElement) driver.findElementById("save_button");
         el12.isDisplayed();
@@ -244,7 +240,6 @@ public class ClaimsPageTests {
         MobileElement el11 = (MobileElement) driver.findElementById("description_edit_text");
         el11.isDisplayed();
         el11.click();
-//        driver.hideKeyboard();
 
         MobileElement el12 = (MobileElement) driver.findElementById("save_button");
         el12.isDisplayed();
@@ -296,7 +291,6 @@ public class ClaimsPageTests {
         el11.isDisplayed();
         el11.click();
         TextGenerator.typeText("claim description", driver);
-//        driver.hideKeyboard();
 
         MobileElement el12 = (MobileElement) driver.findElementById("save_button");
         el12.isDisplayed();
@@ -427,7 +421,6 @@ public class ClaimsPageTests {
         el10.click();
         el10.click();
         TextGenerator.typeText("Petrov Petr Petrovich", driver);
-//        driver.hideKeyboard();
 
         MobileElement el11 = (MobileElement) driver.findElementById("date_in_plan_text_input_edit_text");
         el11.isDisplayed();
@@ -449,7 +442,6 @@ public class ClaimsPageTests {
         el15.isDisplayed();
         el15.click();
         TextGenerator.typeText(" (added change to claim description)", driver);
-//        driver.hideKeyboard();
 
         MobileElement el16 = (MobileElement) driver.findElementById("save_button");
         el16.isDisplayed();
@@ -712,9 +704,6 @@ public class ClaimsPageTests {
         el8.click();
 
         Thread.sleep(2000);
-//        MobileElement el9 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/androidx.cardview.widget.CardView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText");
-//        el9.isDisplayed();
-//        TextGenerator.typeText("comment (diplom-QAMID)", driver);
 
         MobileElement el10 = (MobileElement) driver.findElementById("save_button");
         el10.isDisplayed();
@@ -725,13 +714,6 @@ public class ClaimsPageTests {
         MobileElement el11 = (MobileElement) driver.findElementById("save_button");
         boolean actual = el11.isDisplayed();
         Assertions.assertTrue(actual);
-
-//        el11.isDisplayed();
-//        el10.click();
-//        MobileElement el11 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/androidx.cardview.widget.CardView/android.view.ViewGroup/androidx.cardview.widget.CardView[2]/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView[1]");
-//        String actual = el11.getText();
-//
-//        Assertions.assertEquals("comment (diplom-QAMID)", actual);
     }
 
     @Test
