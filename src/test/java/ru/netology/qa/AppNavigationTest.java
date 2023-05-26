@@ -109,11 +109,12 @@ public class AppNavigationTest {
         el2.isDisplayed();
         el2.click();
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout");
         el3.isDisplayed();
         el3.click();
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         MobileElement el4 = (MobileElement) driver.findElementById("container_list_claim_include");
 
         boolean actual1 = el4.isDisplayed();
@@ -124,11 +125,12 @@ public class AppNavigationTest {
         el5.isDisplayed();
         el5.click();
 
-        MobileElement el6 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el6 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
         el6.isDisplayed();
         el6.click();
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         MobileElement el8 = (MobileElement) driver.findElementById("container_list_news_include");
 
         boolean actual2 = el8.isDisplayed();
@@ -139,7 +141,8 @@ public class AppNavigationTest {
         el9.isDisplayed();
         el9.click();
 
-        MobileElement el10 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el10 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout");
         el10.isDisplayed();
         el10.click();
 

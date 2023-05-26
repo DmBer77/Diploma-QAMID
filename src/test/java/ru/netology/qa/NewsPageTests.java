@@ -62,12 +62,13 @@ public class NewsPageTests {
     @Test
     public void openNewsPage() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
@@ -90,24 +91,26 @@ public class NewsPageTests {
     @Test
     public void addNewsWithCorrectFillingFields() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
+        Thread.sleep(500);
         MobileElement el4 = (MobileElement) driver.findElementById("edit_news_material_button");
         el4.isDisplayed();
         el4.click();
-
+        Thread.sleep(2000);
         MobileElement el5 = (MobileElement) driver.findElementById("add_news_image_view");
         el5.isDisplayed();
         el5.click();
 
+        Thread.sleep(1000);
         MobileElement el6 = (MobileElement) driver.findElementById("news_item_category_text_auto_complete_text_view");
         el6.isDisplayed();
         el6.click();
@@ -115,12 +118,14 @@ public class NewsPageTests {
 
         AuxiliaryActions.tapByCoordinates(380, 645, driver);
 
+        Thread.sleep(500);
         MobileElement el7 = (MobileElement) driver.findElementById("news_item_title_text_input_edit_text");
         el7.isDisplayed();
         el7.click();
         el7.clear();
         TextGenerator.typeText("Header_of_news_05.23", driver);
 
+        Thread.sleep(500);
         MobileElement el8 = (MobileElement) driver.findElementById("news_item_publish_date_text_input_edit_text");
         el8.isDisplayed();
         el8.click();
@@ -128,6 +133,7 @@ public class NewsPageTests {
         MobileElement el9 = (MobileElement) driver.findElementById("android:id/button1");
         el9.isDisplayed();
         el9.click();
+        Thread.sleep(500);
         MobileElement el10 = (MobileElement) driver.findElementById("news_item_publish_time_text_input_edit_text");
         el10.isDisplayed();
         el10.click();
@@ -145,21 +151,9 @@ public class NewsPageTests {
         MobileElement el13 = (MobileElement) driver.findElementById("save_button");
         el13.isDisplayed();
         el13.click();
-        Thread.sleep(2000);
 
-        MobileElement el14 = (MobileElement) driver.findElementById("main_menu_image_button");
-        el14.isDisplayed();
-        el14.click();
-        Thread.sleep(500);
-
-        MobileElement el15 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
-        el15.isDisplayed();
-        el15.click();
-
-        MobileElement el16 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
-        el16.isDisplayed();
-        el16.click();
-        MobileElement el17 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
+        Thread.sleep(1000);
+        MobileElement el17 = (MobileElement) driver.findElementById("news_item_title_text_view");
         el17.isDisplayed();
         String actual2 = el17.getText();
 
@@ -169,13 +163,13 @@ public class NewsPageTests {
     @Test
     public void addNewsCategoryFieldIsBlank() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
@@ -228,13 +222,13 @@ public class NewsPageTests {
     @Test
     public void addNewsDataOrTimeFieldIsBlank() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
@@ -287,13 +281,13 @@ public class NewsPageTests {
     @Test
     public void addNewsOneOfTheTextFieldsIsBlank() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
@@ -341,13 +335,13 @@ public class NewsPageTests {
     @Test
     public void changeNewsWithCorrectFillingFields() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
@@ -355,11 +349,11 @@ public class NewsPageTests {
         el4.isDisplayed();
         el4.click();
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         MobileElement el5 = (MobileElement) driver.findElementById("edit_news_item_image_view");
         el5.isDisplayed();
         el5.click();
-
+        Thread.sleep(1000);
         MobileElement el6 = (MobileElement) driver.findElementById("news_item_category_text_auto_complete_text_view");
         el6.isDisplayed();
         el6.click();
@@ -400,19 +394,7 @@ public class NewsPageTests {
         el13.click();
         Thread.sleep(2000);
 
-        MobileElement el14 = (MobileElement) driver.findElementById("main_menu_image_button");
-        el14.isDisplayed();
-        el14.click();
-        Thread.sleep(500);
-
-        MobileElement el15 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
-        el15.isDisplayed();
-        el15.click();
-
-        MobileElement el16 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
-        el16.isDisplayed();
-        el16.click();
-        MobileElement el17 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
+        MobileElement el17 = (MobileElement) driver.findElementById("news_item_title_text_view");
         el17.isDisplayed();
         String actual2 = el17.getText();
 
@@ -422,25 +404,27 @@ public class NewsPageTests {
     @Test
     public void changeNewsCategoryFieldIsBlank() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
+        Thread.sleep(3000);
         MobileElement el4 = (MobileElement) driver.findElementById("edit_news_material_button");
         el4.isDisplayed();
         el4.click();
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         MobileElement el5 = (MobileElement) driver.findElementById("edit_news_item_image_view");
         el5.isDisplayed();
         el5.click();
 
+        Thread.sleep(1000);
         MobileElement el6 = (MobileElement) driver.findElementById("news_item_category_text_auto_complete_text_view");
         el6.isDisplayed();
         el6.click();
@@ -489,16 +473,17 @@ public class NewsPageTests {
     @Test
     public void changeNewsDateOrTimeFieldIsBlank() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
+        Thread.sleep(1000);
         MobileElement el4 = (MobileElement) driver.findElementById("edit_news_material_button");
         el4.isDisplayed();
         el4.click();
@@ -508,6 +493,7 @@ public class NewsPageTests {
         el5.isDisplayed();
         el5.click();
 
+        Thread.sleep(1000);
         MobileElement el6 = (MobileElement) driver.findElementById("news_item_category_text_auto_complete_text_view");
         el6.isDisplayed();
         el6.click();
@@ -553,13 +539,13 @@ public class NewsPageTests {
     @Test
     public void changeNewsOneOfTheTextFieldsIsBlank() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
@@ -567,8 +553,8 @@ public class NewsPageTests {
         el4.isDisplayed();
         el4.click();
 
-        Thread.sleep(2000);
-        MobileElement el5 = (MobileElement) driver.findElementById("edit_news_item_image_view");
+        Thread.sleep(3000);
+        MobileElement el5 = (MobileElement) driver.findElementById("ru.iteco.fmhandroid:id/edit_news_item_image_view");
         el5.isDisplayed();
         el5.click();
 
@@ -620,13 +606,13 @@ public class NewsPageTests {
     @Test
     public void deleteNews() throws InterruptedException {
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
@@ -649,8 +635,9 @@ public class NewsPageTests {
         el7.isDisplayed();
         el7.click();
         el7.clear();
+        String text = "Test_news_for_deleting_" + AuxiliaryActions.getCurrentTime();
 
-        TextGenerator.typeText("Test_news_for_deleting", driver);
+        TextGenerator.typeText(text, driver);
 
         MobileElement el8 = (MobileElement) driver.findElementById("news_item_publish_date_text_input_edit_text");
         el8.isDisplayed();
@@ -678,31 +665,15 @@ public class NewsPageTests {
         el13.click();
         Thread.sleep(2000);
 
-        MobileElement el14 = (MobileElement) driver.findElementById("main_menu_image_button");
-        el14.isDisplayed();
-        el14.click();
-        Thread.sleep(500);
-
-        MobileElement el15 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
-        el15.isDisplayed();
-        el15.click();
-
-        MobileElement el16 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
-        el16.isDisplayed();
-        el16.click();
-        MobileElement el17 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
+        Thread.sleep(1000);
+        MobileElement el17 = (MobileElement) driver.findElementById("news_item_title_text_view");
         el17.isDisplayed();
         String actual2 = el17.getText();
 
-        Assertions.assertEquals("Test_news_for_deleting", actual2);
+        Assertions.assertEquals(text, actual2);
 
         Thread.sleep(1000);
 
-        MobileElement el20 = (MobileElement) driver.findElementById("edit_news_material_button");
-        el20.isDisplayed();
-        el20.click();
-
-        Thread.sleep(2000);
         MobileElement el21 = (MobileElement) driver.findElementById("delete_news_item_image_view");
         el21.isDisplayed();
         el21.click();
@@ -712,19 +683,8 @@ public class NewsPageTests {
         el22.click();
         Thread.sleep(500);
 
-        MobileElement el23 = (MobileElement) driver.findElementById("main_menu_image_button");
-        el23.isDisplayed();
-        el23.click();
-        Thread.sleep(500);
-
-        MobileElement el24 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
-        el24.isDisplayed();
-        el24.click();
-
-        MobileElement el25 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
-        el25.isDisplayed();
-        el25.click();
-        MobileElement el26 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
+        Thread.sleep(1000);
+        MobileElement el26 = (MobileElement) driver.findElementById("news_item_title_text_view");
         el26.isDisplayed();
         String actual3 = el26.getText();
 
@@ -732,18 +692,20 @@ public class NewsPageTests {
     }
 
     @Test
-    public void sortAndFilterNews() throws InterruptedException {
+    public void filterNews() throws InterruptedException {
+//        -----------creation----------
         Thread.sleep(2000);
-
         MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
         el2.isDisplayed();
         el2.click();
-        Thread.sleep(500);
 
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
         el3.isDisplayed();
         el3.click();
 
+        Thread.sleep(2000);
         MobileElement el4 = (MobileElement) driver.findElementById("edit_news_material_button");
         el4.isDisplayed();
         el4.click();
@@ -752,6 +714,7 @@ public class NewsPageTests {
         el5.isDisplayed();
         el5.click();
 
+        Thread.sleep(1000);
         MobileElement el6 = (MobileElement) driver.findElementById("news_item_category_text_auto_complete_text_view");
         el6.isDisplayed();
         el6.click();
@@ -790,25 +753,16 @@ public class NewsPageTests {
         MobileElement el13 = (MobileElement) driver.findElementById("save_button");
         el13.isDisplayed();
         el13.click();
-        Thread.sleep(2000);
 
-        MobileElement el14 = (MobileElement) driver.findElementById("main_menu_image_button");
-        el14.isDisplayed();
-        el14.click();
-        Thread.sleep(500);
+        Thread.sleep(3000);
 
-        MobileElement el15 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView");
-        el15.isDisplayed();
-        el15.click();
-
-        MobileElement el16 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
-        el16.isDisplayed();
-        el16.click();
-        MobileElement el17 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
+        MobileElement el17 = (MobileElement) driver.findElementById("news_item_title_text_view");
         el17.isDisplayed();
         String actual2 = el17.getText();
 
         Thread.sleep(1000);
+
+//        --------filtering----------------
 
         MobileElement el20 = (MobileElement) driver.findElementById("filter_news_material_button");
         el20.isDisplayed();
@@ -837,49 +791,23 @@ public class NewsPageTests {
         el25.isDisplayed();
         el25.click();
 
+        MobileElement el251 = (MobileElement) driver.findElementById("filter_news_inactive_material_check_box");
+        el251.isDisplayed();
+        el251.click();
+
         MobileElement el26 = (MobileElement) driver.findElementById("filter_button");
         el26.isDisplayed();
         el26.click();
 
-//        --------filtering----------------
+        Thread.sleep(1000);
 
-        Thread.sleep(500);
-
-        MobileElement el28 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
-        el28.isDisplayed();
-        el28.click();
-
-        MobileElement el29 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
+        MobileElement el29 = (MobileElement) driver.findElementById("news_item_title_text_view");
         el29.isDisplayed();
         String actual3 = el29.getText();
 
         Assertions.assertEquals(actual2, actual3);
 
-//        --------sorting----------------
-
-        MobileElement el30 = (MobileElement) driver.findElementById("sort_news_material_button");
-        el30.isDisplayed();
-        el30.click();
-
-        Thread.sleep(1000);
-        AuxiliaryActions.verticalSwipeByPercentages(30, 90, 50, driver);
-
-        MobileElement el31 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
-        el31.isDisplayed();
-        el31.click();
-        MobileElement el32 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.TextView[1]");
-        el32.isDisplayed();
-        String actual4 = el32.getText();
-
-        Assertions.assertNotEquals(actual2, actual4);
-
 //        --------deleting----------------
-
-        Thread.sleep(1000);
-
-        MobileElement el36 = (MobileElement) driver.findElementById("edit_news_material_button");
-        el36.isDisplayed();
-        el36.click();
 
         Thread.sleep(1000);
         MobileElement el37 = (MobileElement) driver.findElementById("delete_news_item_image_view");
@@ -890,5 +818,81 @@ public class NewsPageTests {
         el38.isDisplayed();
         el38.click();
         Thread.sleep(500);
+    }
+
+    @Test
+    public void sortNews() throws InterruptedException {
+//        -----------creation----------
+        Thread.sleep(2000);
+        MobileElement el2 = (MobileElement) driver.findElementById("main_menu_image_button");
+        el2.isDisplayed();
+        el2.click();
+
+        Thread.sleep(1000);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout");
+        el3.isDisplayed();
+        el3.isDisplayed();
+        el3.click();
+
+        Thread.sleep(2000);
+        MobileElement el4 = (MobileElement) driver.findElementById("edit_news_material_button");
+        el4.isDisplayed();
+        el4.click();
+
+        Thread.sleep(1000);
+
+//        --------filtering----------------
+
+        MobileElement el20 = (MobileElement) driver.findElementById("filter_news_material_button");
+        el20.isDisplayed();
+        el20.click();
+
+        Thread.sleep(1000);
+
+        MobileElement el21 = (MobileElement) driver.findElementById("news_item_category_text_auto_complete_text_view");
+        el21.isDisplayed();
+        el21.click();
+        Thread.sleep(1000);
+        AuxiliaryActions.tapByCoordinates(380, 950, driver);
+
+        MobileElement el22 = (MobileElement) driver.findElementById("news_item_publish_date_start_text_input_edit_text");
+        el22.isDisplayed();
+        el22.click();
+        Thread.sleep(1000);
+        MobileElement el23 = (MobileElement) driver.findElementById("android:id/button1");
+        el23.isDisplayed();
+        el23.click();
+        MobileElement el24 = (MobileElement) driver.findElementById("news_item_publish_date_end_text_input_edit_text");
+        el24.isDisplayed();
+        el24.click();
+        Thread.sleep(1000);
+        MobileElement el25 = (MobileElement) driver.findElementById("android:id/button1");
+        el25.isDisplayed();
+        el25.click();
+
+        MobileElement el26 = (MobileElement) driver.findElementById("filter_button");
+        el26.isDisplayed();
+        el26.click();
+
+        Thread.sleep(1000);
+
+        MobileElement el29 = (MobileElement) driver.findElementById("news_item_title_text_view");
+        el29.isDisplayed();
+        String actual3 = el29.getText();
+
+//        --------sorting----------------
+
+        MobileElement el30 = (MobileElement) driver.findElementById("sort_news_material_button");
+        el30.isDisplayed();
+        el30.click();
+
+        Thread.sleep(1000);
+        AuxiliaryActions.verticalSwipeByPercentages(40, 90, 50, driver);
+
+        MobileElement el32 = (MobileElement) driver.findElementById("news_item_title_text_view");
+        el32.isDisplayed();
+        String actual4 = el32.getText();
+
+        Assertions.assertNotEquals(actual3, actual4);
     }
 }
