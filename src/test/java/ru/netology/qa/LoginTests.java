@@ -2,21 +2,26 @@ package ru.netology.qa;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.netology.TextGenerator;
+import ru.netology.base.TestListener;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
+@ExtendWith(TestListener.class)
 public class LoginTests {
 
     public AndroidDriver driver;
 
     @BeforeEach
+    @Step ("1. Запуск приложения")
     public void setUp() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "android");
@@ -37,11 +42,14 @@ public class LoginTests {
     }
 
     @AfterEach
+    @Step ("3. Закрытие приложения")
     public void tearDown() {
         driver.quit();
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Вход в приложение с валидными логином и паролем")
     public void validLoginAndPassword() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -61,12 +69,18 @@ public class LoginTests {
 
         Thread.sleep(5000);
         MobileElement el4 = (MobileElement) driver.findElementById("trademark_image_view");
+//        el4.isDisplayed();
+//
+//        String actual = el4.getId();
+//        Assertions.assertEquals("trademark_image_view", actual );
 
         boolean actual = el4.isDisplayed();
         Assertions.assertTrue(actual);
     }
 
     @Test
+    @Step("2. Авторизациия в приложении")
+    @Description("Попытка входа в приложение с валидными логином и паролем, но с отсутствием связи")
     public void validLoginAndPasswordWithoutConnection() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -95,6 +109,8 @@ public class LoginTests {
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Попытка входа в приложение с невалиным логином и валидным паролем")
     public void invalidLoginAndValidPassword() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -120,6 +136,8 @@ public class LoginTests {
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Попытка входа в приложение с валиным логином и незаполненным полем пароля")
     public void validLoginAndBlankPasswordField() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -140,6 +158,8 @@ public class LoginTests {
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Вход и выход из приложения с валидными логином и паролем")
     public void LoginAndLogout() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -180,6 +200,8 @@ public class LoginTests {
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Вход в приложение с валидными логином и паролем с последующим закрытием приложения без корректного выхода")
     public void LoginAndQuitWithoutLogout() throws InterruptedException {
         Thread.sleep(5000);
 

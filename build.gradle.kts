@@ -13,9 +13,11 @@ repositories {
 
 dependencies {
     implementation ("io.appium:java-client:7.6.0")
+    implementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
 
     testImplementation ("org.junit.jupiter:junit-jupiter-api:5.7.0")
     testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+
 
     testImplementation("org.aspectj:aspectjweaver:1.9.7")
     testImplementation ("io.qameta.allure:allure-junit5:2.20.1")

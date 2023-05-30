@@ -3,22 +3,28 @@ package ru.netology.qa;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.netology.AuxiliaryActions;
 import ru.netology.TextGenerator;
+import ru.netology.base.TestListener;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@ExtendWith(TestListener.class)
 public class ClaimsPageTests {
 
     public AndroidDriver driver;
 
     @BeforeEach
+    @Step("1. Запуск приложения и авторизация")
     public void setUp() throws MalformedURLException, InterruptedException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "android");
@@ -54,11 +60,15 @@ public class ClaimsPageTests {
     }
 
     @AfterEach
+    @Step("3. Закрытие приложения")
     public void tearDown() {
         driver.quit();
     }
 
     @Test
+
+    @Step("2. Переход на страницу заявок и перемещение по странице вверз/вниз")
+    @Description("Открытие сраницы с блоками заявок")
     public void openClaimsPage() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -87,6 +97,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок, запуск элемента управления новостями и добавление нового элемента с заполнением всех полей корректными значениями")
+    @Description("Создание новой заявки с корректным заполнением всех полей")
     public void addNewClaimWithCorrectFillingOfFields() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -147,6 +159,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок и добавление нового элемента с незаполненным полем \"Исполнитель\"")
+    @Description("Создание новой заявки с незаполненным полем \"Исполнитель\"")
     public void addNewClaimFieldExecutorIsBlank() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -202,6 +216,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок и добавление нового элемента с незаполненным полем \"Описание\"")
+    @Description("Создание новой заявки с незаполненным одним из текстовых полей")
     public void addNewClaimOneOfTheTextFieldIsBlank() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -261,6 +277,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок и добавление нового элемента с незаполненным полем \"Дата\"")
+    @Description("Создание новой заявки с незаполненным одним из полей \"Дата\" или \"Время\"")
     public void addNewClaimDateOrTimeFieldIsBlank() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -313,6 +331,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок, фильтрация по статусу заявок, открытие первого элемента из списка и изменение статуса заявки, сохранение изменений")
+    @Description("Открытие одной из заявок и изменение ее статуса")
     public void changeClaimStatus() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -397,6 +417,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок открытие первого элемента из списка и внесение изменений в заявку (без изменения даты и времени создания заявки), сохранение изменений")
+    @Description("Открытие одной из заявок и изменение текста заявки")
     public void changeClaimFieldsNotChangeDataOrTime() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -428,12 +450,6 @@ public class ClaimsPageTests {
         MobileElement el71 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
         el71.isDisplayed();
         el71.click();
-
-//        Thread.sleep(1000);
-//        MobileElement el72 = (MobileElement) driver.findElementById("title_text_view");
-//        el72.isDisplayed();
-//        el72.click();
-//        String actual1 = el72.getText();
 
         AuxiliaryActions.verticalSwipeByPercentages(90, 30, 50, driver);
         Thread.sleep(500);
@@ -495,6 +511,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок, фильтрация по статусу заявок, открытие первого элемента из списка и очистка поля \"Заголовок\" и попытка сохранения изменений")
+    @Description("Открытие одной из заявок, очистка одного из текстовых полей и попытка сохранение изменений")
     public void changeClaimFieldsTextFieldIsBlank() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -554,6 +572,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок, фильтрация по статусу заявок, открытие первого элемента из списка и очистка поля \"Времяк\" и попытка сохранения изменений")
+    @Description("Открытие одной из заявок, очистка одного из полей даты и времени и попытка сохранения изменений")
     public void changeClaimFieldsDataOrTimeFieldIsBlank() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -614,6 +634,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок, вызов элемента фильтрации, отключение всех фильтров, попытка фильтрации по статусу заявок")
+    @Description("Фильтрация сохраненных заявок при отсутсвии параметров")
     public void filterClaimByStatusAllCheckboxAreBlank() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -651,6 +673,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок, фильтрация по статусу заявок, открытие первого элемента из списка, запуск элемента добавления комментариев, сохранение изменений")
+    @Description("Открытие одной из заявок и добавление комментария к заявке")
     public void addCommentToClaim() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -718,6 +742,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок, фильтрация по статусу заявок, открытие первого элемента из списка, запуск элемента добавления комментариев, поле \"Комментарий\" оставлено незаполненным, сохранение изменений")
+    @Description("Открытие одной из заявок и попытка добавления комментария к заявке с незаполненным текстовым полем")
     public void addBlankCommentToClaim() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -730,6 +756,7 @@ public class ClaimsPageTests {
         el3.isDisplayed();
         el3.click();
 
+        Thread.sleep(1000);
         MobileElement el4 = (MobileElement) driver.findElementById("filters_material_button");
         el4.isDisplayed();
         el4.click();
@@ -743,7 +770,7 @@ public class ClaimsPageTests {
         el6.isDisplayed();
         el6.click();
 
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         MobileElement el7 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup");
         el7.isDisplayed();
         el7.click();
@@ -773,6 +800,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок, фильтрация по статусу заявок, открытие первого элемента из списка, запуск элемента добавления комментариев, добавление нового комментария, сохранение изменений, повторный в ход в ранее созданый комментарий и внесение в него изменений, сохранение")
+    @Description("Открытие одной из заявок и внесение изменений в имеющийся комментарий заявке")
     public void changeCommentToClaim() throws InterruptedException {
         Thread.sleep(2000);
 
@@ -851,6 +880,8 @@ public class ClaimsPageTests {
     }
 
     @Test
+    @Step("2. Переход на страницу заявок, фильтрация по статусу заявок, открытие первого элемента из списка, запуск элемента добавления комментариев, добавление нового комментария, сохранение изменений, повторный в ход в ранее созданый комментарий и очитска такстового поля, попытка сохранения изменений")
+    @Description("Открытие одной из заявок и попытка внесение изменений в имеющийся комментарий заявке при незаполненном текстовом поле")
     public void changeToBlankCommentToClaim() throws InterruptedException {
         Thread.sleep(2000);
 

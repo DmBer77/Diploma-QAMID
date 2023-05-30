@@ -2,22 +2,28 @@ package ru.netology.qa;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.netology.AuxiliaryActions;
 import ru.netology.TextGenerator;
+import ru.netology.base.TestListener;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@ExtendWith(TestListener.class)
 public class AppNavigationTest {
 
     public AndroidDriver driver;
 
     @BeforeEach
+    @Step ("1. Запуск приложения и авторизация")
     public void setUp() throws MalformedURLException, InterruptedException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "android");
@@ -46,7 +52,6 @@ public class AppNavigationTest {
         el2.isDisplayed();
         el2.click();
         TextGenerator.typeText("password2", driver);
-//        driver.hideKeyboard();
 
         MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
         el3.isDisplayed();
@@ -54,11 +59,14 @@ public class AppNavigationTest {
     }
 
     @AfterEach
+    @Step ("3. Закрытие приложения")
     public void tearDown() {
         driver.quit();
     }
 
     @Test
+    @Step ("2. Переход на страницу с цитатами")
+    @Description("Открытие страницы тематических цитат")
     public void openThematicQuotesPage() throws InterruptedException {
         Thread.sleep(1000);
 
@@ -74,6 +82,8 @@ public class AppNavigationTest {
     }
 
     @Test
+    @Step ("2. Переход на страницу с цитатами и прокрутка страницы вверх/вниз")
+    @Description("Открытие страницы тематических цитат")
     public void thematicQuotesPageNav() throws InterruptedException {
         Thread.sleep(1000);
 
@@ -102,6 +112,8 @@ public class AppNavigationTest {
     }
 
     @Test
+    @Step ("2. Переход на страницу заявок, затем на старницу новосте, затем возврат на главнуюстраницу")
+    @Description("Переключение между страницами приложения через кнопку главного меню")
     public void moveByMenu() throws InterruptedException {
         Thread.sleep(2000);
 
