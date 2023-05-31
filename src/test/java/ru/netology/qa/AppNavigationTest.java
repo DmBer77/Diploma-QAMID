@@ -1,71 +1,20 @@
 package ru.netology.qa;
 
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.netology.AuxiliaryActions;
-import ru.netology.TextGenerator;
+import ru.netology.base.BaseTest;
 import ru.netology.base.TestListener;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 @ExtendWith(TestListener.class)
-public class AppNavigationTest {
-
-    public AndroidDriver driver;
-
-    @BeforeEach
-    @Step ("1. Запуск приложения и авторизация")
-    public void setUp() throws MalformedURLException, InterruptedException {
-        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("platformName", "android");
-        desiredCapabilities.setCapability("appium:deviceName", "samsung");
-        desiredCapabilities.setCapability("appium:automationName", "UiAutomator2");
-        desiredCapabilities.setCapability("appium:appPackage", "ru.iteco.fmhandroid");
-        desiredCapabilities.setCapability("appium:appActivity", "ru.iteco.fmhandroid.ui.AppActivity");
-        desiredCapabilities.setCapability("appium:unicodeKeyboard", true);
-        desiredCapabilities.setCapability("appium:ensureWebviewsHavePages", true);
-        desiredCapabilities.setCapability("appium:nativeWebScreenshot", true);
-        desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
-        desiredCapabilities.setCapability("appium:connectHardwareKeyboard", true);
-
-        URL remoteUrl = new URL("http://127.0.0.1:4723/");
-
-        driver = new AndroidDriver(remoteUrl, desiredCapabilities);
-
-        Thread.sleep(5000);
-
-        MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
-        el1.isDisplayed();
-        el1.click();
-        TextGenerator.typeText("login2", driver);
-
-        MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
-        el2.isDisplayed();
-        el2.click();
-        TextGenerator.typeText("password2", driver);
-
-        MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
-        el3.isDisplayed();
-        el3.click();
-    }
-
-    @AfterEach
-    @Step ("3. Закрытие приложения")
-    public void tearDown() {
-        driver.quit();
-    }
+public class AppNavigationTest extends BaseTest {
 
     @Test
-    @Step ("2. Переход на страницу с цитатами")
+    @Step("2. Переход на страницу с цитатами")
     @Description("Открытие страницы тематических цитат")
     public void openThematicQuotesPage() throws InterruptedException {
         Thread.sleep(1000);
@@ -82,7 +31,7 @@ public class AppNavigationTest {
     }
 
     @Test
-    @Step ("2. Переход на страницу с цитатами и прокрутка страницы вверх/вниз")
+    @Step("2. Переход на страницу с цитатами и прокрутка страницы вверх/вниз")
     @Description("Открытие страницы тематических цитат")
     public void thematicQuotesPageNav() throws InterruptedException {
         Thread.sleep(1000);
@@ -112,7 +61,7 @@ public class AppNavigationTest {
     }
 
     @Test
-    @Step ("2. Переход на страницу заявок, затем на старницу новосте, затем возврат на главнуюстраницу")
+    @Step("2. Переход на страницу заявок, затем на старницу новосте, затем возврат на главнуюстраницу")
     @Description("Переключение между страницами приложения через кнопку главного меню")
     public void moveByMenu() throws InterruptedException {
         Thread.sleep(2000);

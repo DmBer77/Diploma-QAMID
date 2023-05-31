@@ -15,13 +15,14 @@ import ru.netology.base.TestListener;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
 @ExtendWith(TestListener.class)
 public class LoginTests {
 
     public AndroidDriver driver;
 
     @BeforeEach
-    @Step ("1. Запуск приложения")
+    @Step("1. Запуск приложения")
     public void setUp() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "android");
@@ -42,7 +43,7 @@ public class LoginTests {
     }
 
     @AfterEach
-    @Step ("3. Закрытие приложения")
+    @Step("3. Закрытие приложения")
     public void tearDown() {
         driver.quit();
     }
